@@ -1,7 +1,6 @@
 package edu.craptocraft;
 
 import java.util.List;
-import java.util.Set;
 
 import edu.craptocraft.entity.Fruit;
 import jakarta.enterprise.context.ApplicationScoped;

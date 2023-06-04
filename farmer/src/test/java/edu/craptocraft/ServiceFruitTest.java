@@ -26,10 +26,10 @@ public class ServiceFruitTest {
         Assertions.assertThat(service.list()).hasSize(2);
     }
 
-    // @Test
-    // public void containsTest() {
-    //     Assertions.assertThat(service.list().stream().anyMatch(f -> f.getName().equals("Apple"))).isTrue();
-    // }
+    @Test
+    public void containsTest() {
+        Assertions.assertThat(service.list().stream().anyMatch(f -> f.getName().equals("Apple"))).isTrue();
+    }
     
     // @Test
     // public void addTest() {

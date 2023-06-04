@@ -33,6 +33,12 @@ public class Farmer extends PanacheEntityBase {
 
     // getter y setter
 
+    public Farmer(String name, String location) {
+        this.name = name;
+        this.location = location;
+    }
+    
+
     public Long getId() {
         return id;
     }
@@ -53,7 +59,6 @@ public class Farmer extends PanacheEntityBase {
     public void setLocation(String location) {
         this.location = location;
     }
-
 
 
 }

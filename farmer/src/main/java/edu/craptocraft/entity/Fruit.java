@@ -36,6 +36,13 @@ public class Fruit extends PanacheEntityBase
 
     // getter y setter
 
+    public Fruit(String name, String description, Farmer farmer) {
+        this.name = name;
+        this.description = description;
+        this.farmer = farmer;
+    }
+    
+
     public Long getId() {
         return id;
     }

@@ -7,6 +7,8 @@ import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import edu.craptocraft.entity.Farmer;
+import edu.craptocraft.entity.Fruit;
 import io.quarkus.test.junit.QuarkusTest;
 
 /**
@@ -31,21 +33,19 @@ public class ServiceFruitTest {
         Assertions.assertThat(service.list().stream().anyMatch(f -> f.getName().equals("Apple"))).isTrue();
     }
     
-    // @Test
-    // public void addTest() {
-    //     service.add(new Fruit("Banana", 
-    //                           "And an attached Gorilla",
-    //                           new Farmer("Farmer Rick", "Sa Pobla")));
-    //     Assertions.assertThat(service.list()).hasSize(3);
-    //     Assertions.assertThat(service.list().stream().anyMatch(f -> f.getName().equals("Banana"))).isTrue();
-    //     Assertions.assertThat(Farmer.count()).isEqualTo(2L);
+    @Test
+    public void addTest() {
+        service.add(new Fruit("Banana", "And an attached Gorilla", new Farmer("Farmer Rick", "Sa Pobla")));
+        Assertions.assertThat(service.list()).hasSize(3);
+        Assertions.assertThat(service.list().stream().anyMatch(f -> f.getName().equals("Banana"))).isTrue();
+        Assertions.assertThat(Farmer.count()).isEqualTo(2L);
 
-    //     // handmade rollback gracias al antipatron ActiveRecord ;)
-    //     Fruit fruit = Fruit.find("name", "Banana").firstResult();
-    //     fruit.delete();
-    //     Assertions.assertThat(Fruit.count()).isEqualTo(2L);
-    //     Assertions.assertThat(Farmer.count()).isEqualTo(2L);
-    // }
+        // handmade rollback gracias al antipatron ActiveRecord ;)
+        Fruit fruit = Fruit.find("name", "Banana").firstResult();
+        fruit.delete();
+        Assertions.assertThat(Fruit.count()).isEqualTo(2L);
+        Assertions.assertThat(Farmer.count()).isEqualTo(2L);
+    }
 
     // // CORREGIR ESTE TEST PORQUE ES NUEVO 
     // @Test

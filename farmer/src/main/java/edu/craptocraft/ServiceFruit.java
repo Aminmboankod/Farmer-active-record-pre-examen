@@ -35,5 +35,16 @@ public class ServiceFruit {
         fruit.delete();
     }
 
+    public Optional<Fruit> getFruit(String name) {
+
+        Optional<Fruit> fruitOptional = Fruit.find("name", name).firstResultOptional();
+        if (fruitOptional.isPresent()) {
+
+            return fruitOptional;
+        } else {
+            return fruitOptional.empty();
+        }
+    }
+
 
 }

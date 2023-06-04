@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "farmer")
@@ -25,6 +26,7 @@ public class Farmer extends PanacheEntityBase {
     @Column(name = "location")
     private String location;
 
+    @Transient
     @OneToMany(mappedBy = "farmer")
     public Set<Fruit> fruits;
 

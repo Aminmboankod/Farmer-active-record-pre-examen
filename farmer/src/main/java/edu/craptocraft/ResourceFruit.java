@@ -5,12 +5,8 @@ package edu.craptocraft;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
+import java.util.Set;
 import edu.craptocraft.entity.Fruit;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;

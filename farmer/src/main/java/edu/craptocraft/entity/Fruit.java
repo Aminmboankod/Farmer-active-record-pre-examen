@@ -56,7 +56,4 @@ public class Fruit extends PanacheEntityBase
         this.description = description;
     }
 
-
-    
-
 }

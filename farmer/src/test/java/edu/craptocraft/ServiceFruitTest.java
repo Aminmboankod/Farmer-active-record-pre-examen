@@ -1,12 +1,10 @@
 package edu.craptocraft;
 
 
-import java.util.Optional;
-
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
-import org.junit.jupiter.api.Assertions;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import io.quarkus.test.junit.QuarkusTest;
@@ -22,11 +20,11 @@ public class ServiceFruitTest {
     @Inject
     ServiceFruit service;
 
-    // // @Test de jupiter, no el de junit
-    // @Test
-    // public void testList() {
-    //     Assertions.assertThat(service.list()).hasSize(2);
-    // }
+    
+    @Test
+    public void testList() {
+        Assertions.assertThat(service.list()).hasSize(2);
+    }
 
     // @Test
     // public void containsTest() {

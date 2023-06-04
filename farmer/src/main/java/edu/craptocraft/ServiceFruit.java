@@ -30,5 +30,10 @@ public class ServiceFruit {
 
     }
 
+    public void remove(String name) {
+        Fruit fruit = Fruit.find("name", name).firstResult();
+        fruit.delete();
+    }
+
 
 }

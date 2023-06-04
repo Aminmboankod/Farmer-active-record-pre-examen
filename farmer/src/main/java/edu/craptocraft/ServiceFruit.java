@@ -2,6 +2,9 @@ package edu.craptocraft;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import edu.craptocraft.entity.Farmer;
 import edu.craptocraft.entity.Fruit;
@@ -13,8 +16,9 @@ public class ServiceFruit {
     public ServiceFruit() {
     }
 
-    public List<Fruit> list() {
-        return Fruit.listAll();
+    public Set<Fruit> list() {
+        Stream<Fruit> fruits = Fruit.streamAll();
+        return fruits.collect(Collectors.toSet());
     }
 
     public void add(Fruit fruit) {
